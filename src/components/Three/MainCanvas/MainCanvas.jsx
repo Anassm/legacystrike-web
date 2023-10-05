@@ -1,29 +1,20 @@
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useState } from "react";
-import {
-  AmbientLight,
-  BoxGeometry,
-  MeshStandardMaterial,
-  PointLight,
-} from "three";
+import { DoubleSide } from "three";
 
 export default function MainCanvas() {
-  const [hovered, setHovered] = useState(null);
-
   return (
-    <>
-      <Canvas>
-        <AmbientLight intensity={0.5} />
-        <PointLight position={[10, 10, 10]} />
+    <div className="h-screen">
+      <Canvas camera={{ fov: 75, position: 1 }} frameloop="demand">
+        <mesh>
+          <ambientLight intensity={0.1} />
+          <directionalLight color="red" position={[0, 0, 5]} />
 
-        <mesh
-          onPointerOver={() => setHovered(true)}
-          onPointerOut={() => setHovered(false)}
-        >
-          <BoxGeometry args={[1, 1, 1]} />
-          <MeshStandardMaterial color={hovered ? "#ffa400" : "#1d2c48"} />
+          <sphereGeometry args={[1]} />
+          <meshStandardMaterial side={DoubleSide} />
+          <OrbitControls />
         </mesh>
       </Canvas>
-    </>
+    </div>
   );
 }
