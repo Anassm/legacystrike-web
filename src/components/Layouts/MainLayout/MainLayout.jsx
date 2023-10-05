@@ -12,9 +12,12 @@ export default function MainLayout() {
         notifTitle="Test message"
         notifDescription="Legacystrike is back."
       />
-
-      <MainCanvas />
-      <Outlet />
+      <main className="relative">
+        {/* <MainCanvas classN="z-0" /> */}
+        <div className="z-10 absolute top-0">
+          <Outlet />
+        </div>
+      </main>
       <Footer />
     </>
   );
