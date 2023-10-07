@@ -14,9 +14,8 @@ export default function MainLayout() {
       />
       <main className="relative">
         {/* <MainCanvas classN="z-0" /> */}
-        <div className="z-10 absolute top-0">
-          <Outlet />
-        </div>
+
+        <Outlet />
       </main>
       <Footer />
     </>

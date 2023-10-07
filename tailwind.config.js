@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{html,js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'discord-blue': '#738ADB'
+      }
+    },
   },
   plugins: [],
 }
