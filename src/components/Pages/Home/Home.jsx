@@ -9,6 +9,10 @@ import serverIcon from "../../../assets/static/icons/servers.png";
 import { BsDiscord } from "react-icons/bs";
 import { GoDotFill } from "react-icons/go";
 
+// Components
+import TeamSelection from "../../Standalone/TeamSelection";
+import BombCanvas from "../../Three/components/Bomb/BombCanvas";
+
 export default function Home() {
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -115,6 +119,9 @@ export default function Home() {
         </div>
       </div>
 
+      {/* THREE DEEEEEEEEE */}
+      <BombCanvas />
+
       {/* ----- DISCORD ----- */}
       <div className="my-8 mb-24 text-center">
         <h2
@@ -161,6 +168,8 @@ export default function Home() {
           // </div>
         )}
       </div>
+      {/* ----- Team Selection ----- */}
+      <TeamSelection />
     </div>
   );
 
