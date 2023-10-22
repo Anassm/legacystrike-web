@@ -1,9 +1,9 @@
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-} from "@chakra-ui/react";
+// import {
+//   Alert,
+//   AlertDescription,
+//   AlertIcon,
+//   AlertTitle,
+// } from "@chakra-ui/react";
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/static/images/logo.png";
@@ -49,9 +49,9 @@ function Header(alertEnabled, status, variant, notifTitle, notifDescription) {
   ));
 
   return (
-    <header className="backdrop-blur shadow-md text-slate-900">
-      <div className="flex rounded-b-lg mx-24">
-        <Link to="/" className="m-4 flex mr-auto bg-white">
+    <header className="z-20 shadow-md backdrop-blur text-slate-900">
+      <div className="flex mx-24 rounded-b-lg">
+        <Link to="/" className="flex m-4 mr-auto bg-white">
           <img src={logo} width={110} height={110} />
           <span className="m-auto text-4xl font-bold">LegacyStrike</span>
         </Link>
@@ -59,7 +59,7 @@ function Header(alertEnabled, status, variant, notifTitle, notifDescription) {
           {displayPages}
           <li
             style={{ backgroundColor: "#5d79ae" }}
-            className="mr-auto py-2 px-8 rounded-xl font-bold text-lg"
+            className="px-8 py-2 mr-auto text-lg font-bold rounded-xl"
           >
             Store
           </li>
