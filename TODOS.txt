@@ -1,5 +1,0 @@
-Currently the pages on <Header /> are dynamic, pages array must change to React context so it can be accessible by routing.
-Would be cool to have full dynamic routing/pages system working.
-
-
-...

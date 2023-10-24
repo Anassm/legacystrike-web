@@ -13,8 +13,8 @@ import logo from "../../../assets/static/images/logo.png";
 function Header(alertEnabled, status, variant, notifTitle, notifDescription) {
   const pages = [
     {
-      text: "Stats",
-      url: "/stats",
+      text: "Demos",
+      url: "/demos",
       newTab: false,
       activeNav: true,
     },
