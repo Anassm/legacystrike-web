@@ -6,7 +6,7 @@ import MainLayout from "./components/Layouts/MainLayout/MainLayout";
 // Pages
 import Home from "./components/Pages/Home/Home";
 import NotFound from "./components/Pages/NotFound/NotFound";
-import Demos from "./componentPages/Demos/Demos";
+import Demos from "./components/Pages/Demos/Demos";
 
 export default function Routing() {
   const router = createBrowserRouter([
