@@ -5,10 +5,10 @@
 // import versionIcon from "../../../assets/static/icons/version-control.png";
 // import serverIcon from "../../../assets/static/icons/servers.png";
 import Discord from "./Discord";
-import Navbar from "./Navbar";
+import Navbar from "../../Layouts/MainLayout/Navbar";
 import Title from "./Title";
 
-import './video.css';
+import "./video.css";
 import { useEffect, useRef } from "react";
 
 // Components
@@ -62,7 +62,7 @@ export default function Home() {
     if (!videoRef) return;
     if (!videoRef?.current) return;
     videoRef.current?.play();
-  }, [videoRef?.current])
+  }, [videoRef?.current]);
 
   return (
     <div className="relative w-screen h-screen overflow-hidden">
@@ -71,20 +71,25 @@ export default function Home() {
           <source src="BACKGROUND_VIDEO_URL_HERE" type="video/mp4" />
         </video>
       </div>
-      <main className="absolute grid w-full grid-cols-5 gap-5 p-5">
-        <div className="col-span-5 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950">
-          <Navbar />
-        </div>
-        <div className="col-span-2 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950" style={{ height: 400 }} >
+      <main className="absolute grid w-full grid-cols-5 gap-5 pb-5 pr-5 pl-5">
+        <div
+          className="col-span-2 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950"
+          style={{ height: 400 }}
+        >
           <Title />
         </div>
-        <div className="col-span-3 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950" style={{ height: 400 }} >
-
-        </div>
-        <div className="col-span-3 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950" style={{ height: 400 }} >
-
-        </div>
-        <div className="col-span-2 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950" style={{ height: 400 }} >
+        <div
+          className="col-span-3 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950"
+          style={{ height: 400 }}
+        ></div>
+        <div
+          className="col-span-3 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950"
+          style={{ height: 400 }}
+        ></div>
+        <div
+          className="col-span-2 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950"
+          style={{ height: 400 }}
+        >
           <Discord />
         </div>
       </main>

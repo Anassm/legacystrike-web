@@ -4,9 +4,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainLayout from "./components/Layouts/MainLayout/MainLayout";
 
 // Pages
+import Demos from "./components/Pages/Demos/Demos";
 import Home from "./components/Pages/Home/Home";
 import NotFound from "./components/Pages/NotFound/NotFound";
-import Demos from "./components/Pages/Demos/Demos";
+import Stats from "./components/Pages/Stats/Stats";
 
 export default function Routing() {
   const router = createBrowserRouter([
@@ -17,6 +18,10 @@ export default function Routing() {
         {
           index: true,
           element: <Home />,
+        },
+        {
+          path: "/stats",
+          element: <Stats />,
         },
         {
           path: "/demos",
