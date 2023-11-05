@@ -12,6 +12,7 @@ export default function MainLayout() {
         notifTitle="Test message"
         notifDescription="Legacystrike is back."
       /> */}
+
       <div className="grid w-full grid-cols-5 gap-5 p-5">
         <div className="col-span-5 p-5 text-white bg-opacity-75 rounded-lg bg-gray-950">
           <Navbar />
