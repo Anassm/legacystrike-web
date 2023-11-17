@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import mirage from "../../../assets/static/maps/mirage.jpg";
+// import mirage from "../../../assets/static/maps/mirage.jpg";
 
 export default function Stats() {
   const [matchData, setMatchData] = useState([]);
@@ -23,15 +23,15 @@ export default function Stats() {
 
   return (
     <>
-      <div className="flex flex-col items-center mt-20">
-        <h1 className="mb-6 text-lg font-bold">
-          Recent {matchData.length} games
-        </h1>
+      <div className="flex items-center justify-center mt-20">
+        <div className="w-stats col-span-2 p-7 text-white bg-opacity-75 text-center rounded-lg bg-gray-950 backdrop-blur">
+          <h1 className="mb-6 text-lg font-bold">
+            Recent {matchData.length} games
+          </h1>
 
-        <div className="w-60">
           <div className="flex justify-between mb-4">
-            <span className="font-bold">CT</span>
-            <span className="font-bold">T</span>
+            <span className="font-bold text-lg">Counter Terrorists</span>
+            <span className="font-bold text-lg">Terrorists</span>
           </div>
           {matchData.map((match, index) => (
             <div
@@ -45,7 +45,7 @@ export default function Stats() {
                   ? "bg-t-orange"
                   : ""
               }
-                mb-2 pl-6 pr-6 pt-4 pb-4 rounded-md`}
+            mb-4 pl-6 pr-6 pt-4 pb-4 cursor-pointer rounded-md`}
             >
               <span className="flex justify-center font-bold text-white text-center">{`${match.matchData.ctScore} - ${match.matchData.tScore}`}</span>
             </div>

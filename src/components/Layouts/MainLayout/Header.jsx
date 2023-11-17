@@ -8,9 +8,7 @@ import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../assets/static/images/logo.png";
 
-// Chakra <Alert /> docs --> https://chakra-ui.com/docs/components/alert
-
-function Header(alertEnabled, status, variant, notifTitle, notifDescription) {
+function Header() {
   const pages = [
     {
       text: "Demos",
@@ -52,7 +50,7 @@ function Header(alertEnabled, status, variant, notifTitle, notifDescription) {
     <header className="z-20 shadow-md backdrop-blur text-slate-900">
       <div className="flex mx-24 rounded-b-lg">
         <Link to="/" className="flex m-4 mr-auto bg-white">
-          <img src={logo} width={110} height={110} />
+          <img src={logo} width={110} height={110} alt="logo" />
           <span className="m-auto text-4xl font-bold">LegacyStrike</span>
         </Link>
         <ul className="flex items-center">

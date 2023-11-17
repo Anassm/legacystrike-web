@@ -21,6 +21,9 @@ export default {
         "ct-blue": "#3b415c",
         "t-orange": "#e48717",
       },
+      width: {
+        stats: "35%",
+      },
     },
     letterSpacing: {
       score: "-1.05em",
