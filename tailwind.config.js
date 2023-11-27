@@ -4,9 +4,6 @@ export default {
   content: ["./index.html", "./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        mirage: "url('./src/assets/static/maps/mirage.jpg')",
-      },
       backgroundSize: {
         auto: "auto",
         cover: "cover",
