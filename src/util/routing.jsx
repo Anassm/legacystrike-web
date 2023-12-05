@@ -1,13 +1,16 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Layouts
-import MainLayout from "./components/Layouts/MainLayout/MainLayout";
+import MainLayout from "../components/Layouts/MainLayout/MainLayout";
+
+// Loaders
+import { loader as discordLoader } from "../components/Pages/Home/Discord";
 
 // Pages
-import Demos from "./components/Pages/Demos/Demos";
-import Home from "./components/Pages/Home/Home";
-import NotFound from "./components/Pages/NotFound/NotFound";
-import Stats from "./components/Pages/Stats/Stats";
+import Demos from "../components/Pages/Demos/Demos";
+import Home from "../components/Pages/Home/Home";
+import NotFound from "../components/Pages/NotFound/NotFound";
+import Stats from "../components/Pages/Stats/Stats";
 
 export default function Routing() {
   const router = createBrowserRouter([
@@ -18,6 +21,7 @@ export default function Routing() {
         {
           index: true,
           element: <Home />,
+          loader: discordLoader,
         },
         {
           path: "/stats",
