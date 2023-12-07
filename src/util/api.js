@@ -1,12 +1,15 @@
 export async function getDiscord() {
   try {
-    const res = await fetch(
-      `https://discord.com/api/guilds/973441288584192061/widget.json`
-    );
-    const dat = await res.json();
+    const res = await fetch(import.meta.env.VITE_DISCORD_API_ID);
 
-    return dat;
+    if (!res.ok) {
+      throw new Error(`Failed to fetch Discord data. Status: ${res.status}`);
+    }
+
+    const data = await res.json();
+    return data;
   } catch (err) {
-    console.error(err);
+    console.error("Error fetching Discord data:", err);
+    throw err;
   }
 }
