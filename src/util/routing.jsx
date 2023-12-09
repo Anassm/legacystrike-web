@@ -1,16 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
-// Layouts
 import MainLayout from "../components/Layouts/MainLayout/MainLayout";
-
-// Loaders
-import { loader as discordLoader } from "../components/Pages/Home/Discord";
-
-// Pages
 import Demos from "../components/Pages/Demos/Demos";
+import { loader as discordLoader } from "../components/Pages/Home/Discord";
 import Home from "../components/Pages/Home/Home";
 import NotFound from "../components/Pages/NotFound/NotFound";
-import Stats from "../components/Pages/Stats/Stats";
+import Stats, { loader as statsLoader } from "../components/pages/Stats/Stats";
 
 export default function Routing() {
   const router = createBrowserRouter([
@@ -26,6 +20,7 @@ export default function Routing() {
         {
           path: "/stats",
           element: <Stats />,
+          loader: statsLoader,
         },
         {
           path: "/demos",
