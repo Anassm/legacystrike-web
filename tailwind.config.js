@@ -26,5 +26,5 @@ export default {
       score: "-1.05em",
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };

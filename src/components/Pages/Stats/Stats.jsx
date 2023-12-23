@@ -49,43 +49,24 @@ export default function Stats() {
 
   function renderMatchesElements(matches) {
     return matches.length >= 1 ? (
-      <div className="flex items-center justify-center mt-20">
-        <div className="w-stats col-span-2 pb-5 pl-7 pr-7 pt-7 text-white bg-opacity-75 text-center rounded-lg bg-gray-950 backdrop-blur">
+      <div className="flex items-center justify-center m-5">
+        <div className="w-full lg:w-96 col-span-2 pb-5 pl-7 pr-7 pt-7 text-white bg-opacity-75 text-center rounded-lg bg-gray-950 backdrop-blur">
           <h1 className="mb-6 text-lg font-bold">
             Recent {matches.length} games
           </h1>
-
           <div className="flex justify-between mb-4">
             <span className="font-bold text-lg">Counter Terrorists</span>
             <span className="font-bold text-lg">Terrorists</span>
           </div>
-
           {matches.map((match, index) => {
-            const playedMap = mapNames.find(
-              (map) => map.original === match.mapName
-            );
-            const overlayColorClass =
-              match && match.matchData.ctScore > match.matchData.tScore
-                ? "bg-ct-blue opacity-70"
-                : match && match.matchData.tScore > match.matchData.ctScore
-                ? "bg-t-orange"
-                : "";
-
+            const playedMap = mapNames.find((map) => map.original === match.mapName)
+            const overlayColorClass = match && match.matchData.ctScore > match.matchData.tScore? "bg-ct-blue opacity-70": match && match.matchData.tScore > match.matchData.ctScore? "bg-t-orange": "";
             return (
-              <div
-                key={index}
+              <div key={index}
                 className={`relative mb-4 pl-6 pr-6 pt-3 pb-4 cursor-pointer rounded-md bg-center object-fill`}
-                style={{
-                  backgroundImage: playedMap
-                    ? `url('./src/assets/static/maps/${playedMap.name.toLowerCase()}.jpg')`
-                    : "",
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                }}
-              >
-                <div
-                  className={`absolute inset-0 ${overlayColorClass} opacity-50 rounded-md`}
-                ></div>
+                style={{backgroundImage: playedMap? `url('./src/assets/static/maps/${playedMap.name.toLowerCase()}.jpg')`: "",backgroundPosition: "center",backgroundSize: "cover",
+                }}>
+                <div className={`absolute inset-0 ${overlayColorClass} opacity-50 rounded-md`}></div>
                 {playedMap ? (
                   <span className="z-10 relative text-white">
                     {playedMap.name} - ??? Hours ago
@@ -95,9 +76,8 @@ export default function Stats() {
                     No mapname found - ??? Hours ago
                   </span>
                 )}
-                <span className="z-10 relative flex justify-center font-bold text-white text-center text-2xl mt-1">{`${
-                  match?.matchData.ctScore || 0
-                } - ${match?.matchData.tScore || 0}`}</span>
+                <span className="z-10 relative flex justify-center font-bold text-white text-center text-2xl mt-1">{`${match?.matchData.ctScore || 0
+                  } - ${match?.matchData.tScore || 0}`}</span>
               </div>
             );
           })}
@@ -105,7 +85,7 @@ export default function Stats() {
       </div>
     ) : (
       <div className="flex items-center justify-center mt-20">
-        <div className="w-stats col-span-2 p-7 text-white bg-opacity-75 text-center rounded-lg bg-gray-950 backdrop-blur">
+        <div className="col-span-2 p-7 text-white bg-opacity-75 text-center rounded-lg bg-gray-950 backdrop-blur">
           <p className="text-lg">
             It seems like something went wrong when gathering stats. Please
             contact the LegacyStrike team if this isn&apos;t resolved after a

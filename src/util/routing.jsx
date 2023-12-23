@@ -4,7 +4,7 @@ import Demos from "../components/Pages/Demos/Demos";
 import { loader as discordLoader } from "../components/Pages/Home/Discord";
 import Home from "../components/Pages/Home/Home";
 import NotFound from "../components/Pages/NotFound/NotFound";
-import Stats, { loader as statsLoader } from "../components/pages/Stats/Stats";
+import Stats, { loader as statsLoader } from "../components/Pages/Stats/Stats";
 
 export default function Routing() {
   const router = createBrowserRouter([
