@@ -7,4 +7,13 @@ export default defineConfig({
     "process.env": import.meta.env,
   },
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom"],
+        },
+      },
+    },
+  },
 });

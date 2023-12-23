@@ -6,19 +6,54 @@ const Navbar = () => {
   const size = 50;
   return (
     <nav class="flex flex-wrap items-center justify-between">
-      <div className="flex flex-row gap-5 items-center">
+      <Link className="flex flex-row gap-5 items-center" to="/">
         <img src={logo} width={size} height={size} alt="logo" />
         <div className="text-3xl font-bold">LegacyStrike</div>
-      </div>
+      </Link>
       <div className="flex flex-row justify-end">
-      <div class="md:hidden dropdown dropdown-end">
+        <div class="md:hidden dropdown dropdown-end">
           <div tabindex="10" role="button" class="btn btn-ghost btn-circle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
           </div>
-          <ul tabindex="10" class="z-10 menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow rounded-box w-52">
-            <li><Link to="/stats">Stats</Link></li>
-            <li><a href="https://legacystrike.net/fastdl/" target="_blank" rel="noreferrer">FastDL</a></li>
-            <li><Link to="/support-us">Support us</Link></li>
+          <ul
+            tabindex="10"
+            class="z-10 menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow rounded-box w-52"
+          >
+            <li>
+              <Link to="/demos">Demos</Link>
+            </li>
+            <li>
+              <a
+                href="https://legacystrike.net/fastdl/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                FastDL
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://legacystrike.net/sourcebans/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Bans
+              </a>
+            </li>
           </ul>
         </div>
         <div class="hidden md:block" id="navbar-default">
@@ -32,12 +67,21 @@ const Navbar = () => {
                 FastDL
               </a>
             </div>
+
             <div>
-              <Link to="/stats">Stats</Link>
+              <a
+                href="https://legacystrike.net/sourcebans/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Bans
+              </a>
             </div>
+
             <div>
-              
+              <Link to="/demos">Demos</Link>
             </div>
+
             <div>
               <button className="flex flex-row items-center gap-2 px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
                 <LiaShoppingBagSolid />
@@ -48,7 +92,6 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-
   );
 };
 

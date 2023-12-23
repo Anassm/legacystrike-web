@@ -1,4 +1,4 @@
-import Discord from "./Discord";
+import Discord from "./Discord/Discord";
 import Title from "./Title";
 
 import "./video.css";
